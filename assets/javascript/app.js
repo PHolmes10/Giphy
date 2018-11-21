@@ -8,7 +8,7 @@ $('#submit').on('click', function (event) {
     $(".rowTop").append(newBtn);
 });
 
-$('button').on('click', function () {
+$(document).on('click', 'button', function () {
     var name = $(this).data("search");
 
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=eMxiubUBiYXeaZPLMjMQyxAVkubINTVG&limit=10"
