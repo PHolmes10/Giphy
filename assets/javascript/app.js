@@ -20,8 +20,10 @@ $(document).on('click', 'button', function () {
     }).then(function (response) {
         console.log(response);
         for (var i = 0; i < response.data.length; i++) {
-            $("#gifDiv").append("<p>Rating: " + response.data[i].rating + "</p>");
-            $("#gifDiv").append("<img src='" + response.data[i].images.fixed_height.url + "'>");
+            $("#gifDiv").prepend("<p>Rating: " + response.data[i].rating + "</p>");
+            var images = $("<img src='" + response.data[i].images.fixed_height_still.url + "'>");
+            images.attr("class", "gif")
+            $("#gifDiv").prepend(images);
         };
     });
 });
