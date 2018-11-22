@@ -6,6 +6,7 @@ $('#submit').on('click', function (event) {
     newBtn.text(userInput);
     console.log(newBtn);
     $(".rowTop").append(newBtn);
+    $("#search").val("");
 });
 
 $(document).on('click', 'button', function () {
@@ -19,8 +20,8 @@ $(document).on('click', 'button', function () {
     }).then(function (response) {
         console.log(response);
         for (var i = 0; i < response.data.length; i++) {
-            $("#gifDiv").prepend("<p>Rating: " + response.data[i].rating + "</p>");
-            $("#gifDiv").prepend("<img src='" + response.data[i].images.fixed_height.url + "'>");
+            $("#gifDiv").append("<p>Rating: " + response.data[i].rating + "</p>");
+            $("#gifDiv").append("<img src='" + response.data[i].images.fixed_height.url + "'>");
         };
     });
 });
