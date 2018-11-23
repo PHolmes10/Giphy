@@ -1,1 +1,3 @@
 # Giphy
+
+This app will produce 10 random GIFs of a particular subject pulled from the Giphy API when you click on each button corresponding to that subject.  You can add more buttons for whatever subject you like using the text form on the right hand side of the page.  When you click a second button, the 10 new gifs will not overwrite the last 10, they will appear above the last 10.  Each GIF will also show its rating just below the image.  The GIFs will be motionless images upon loading the page or clicking a button.  They will animate once you click on the image itself.  You can also click on image that's animated to stop it again.  
