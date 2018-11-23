@@ -11,3 +11,8 @@ button {
     margin: 5px;
     cursor: pointer;
 }
+
+#submit {
+    cursor: pointer;
+}
+
