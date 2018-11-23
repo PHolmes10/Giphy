@@ -10,9 +10,30 @@
 button {
     margin: 5px;
     cursor: pointer;
+    background-color: rgb(116, 156, 156);
+    color: white;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgb(67, 95, 95);
 }
 
 #submit {
+    margin: 5px;
     cursor: pointer;
+    background-color: rgb(116, 156, 156);
+    color: white;
+    border-radius: 8px;
 }
 
+#submit:hover {
+    background-color: rgb(67, 95, 95);
+}
+gifSpan {
+    float: right;
+}
+
+#gifSearch {
+    font-weight: bolder;
+}

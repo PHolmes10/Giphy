@@ -1,3 +1,29 @@
+// Array containing topics that will generate the buttons
+var topics = ["arthur", "rugrats",]
+// Looping through the topics array to apply new buttons to each element
+for (var i = 0; i < topics.length; i++) {
+    // creating a new button with a custom attribute that matches what the user types into the search form.
+    var newBtn = $("<button>").attr("data-search", topics[i]);
+    // Adding text to the button to match what the user typed in the search form.
+    newBtn.text(topics[i]);
+    // Appending the new button to the bar of buttons at the top of the page
+    $(".rowTop").append(newBtn);
+    // Clearing the search form 
+    $("#search").val("");
+}
+
+// Function for adding new buttons
+function newBtns() {
+    // creating a new button with a custom attribute that matches the last element of the topics array
+    var newBtn = $("<button>").attr("data-search", topics[topics.length - 1]);
+    // Adding text to the button to match the string of the last element in the topics array
+    newBtn.text(topics[topics.length - 1]);
+    // Appending the new button to the bar of buttons at the top of the page
+    $(".rowTop").append(newBtn);
+    // Clearing the search form 
+    $("#search").val("");
+}
+
 // Click event for the submit button
 $('#submit').on('click', function (event) {
 
@@ -5,14 +31,11 @@ $('#submit').on('click', function (event) {
     event.preventDefault();
     // creating a variable to capture the value of the search form.
     var userInput = $("#search").val().trim();
-    // creating a new button with a custom attribute that matches what the user types into the search form.
-    var newBtn = $("<button>").attr("data-search", userInput);
-    // Adding text to the button to match what the user typed in the search form.
-    newBtn.text(userInput);
-    // Appending the new button to the bar of buttons at the top of the page
-    $(".rowTop").append(newBtn);
-    // Clearing the search form 
-    $("#search").val("");
+    topics.push(userInput);
+    console.log(topics);
+
+    newBtns();
+
 });
 
 // Click event for each button using event delegation
@@ -33,7 +56,7 @@ $(document).on('click', 'button', function () {
         // Loop through the list of 10 random gifs
         for (var i = 0; i < results.length; i++) {
             // Create a new div for each gif
-            var gifDiv = $("<div>");
+            var gifSpan = $("<span>");
             // Capture the rating of each gif
             var rating = response.data[i].rating;
             // Creating a p tag to display the rating 
@@ -49,10 +72,10 @@ $(document).on('click', 'button', function () {
             // Adding a custom attribute called data-animate and setting the value to the link of the moving gif image
             images.attr("data-animate", response.data[i].images.fixed_height.url);
             // Appending the P and Image tags to the div
-            gifDiv.prepend(p);
-            gifDiv.prepend(images);
+            gifSpan.prepend(p);
+            gifSpan.prepend(images);
             // Appending the gif div to a div on the DOM 
-            $("#gifList").prepend(gifDiv);
+            $("#gifList").prepend(gifSpan);
         };
 
     });
