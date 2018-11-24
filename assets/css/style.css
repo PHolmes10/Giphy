@@ -1,4 +1,7 @@
- #gifSearch {
+
+
+
+#gifSearch {
     float: right;
     
 }
@@ -10,30 +13,34 @@
 button {
     margin: 5px;
     cursor: pointer;
-    background-color: rgb(116, 156, 156);
+    background-color: rgb(63, 95, 184);
     color: white;
     border-radius: 8px;
 }
 
 button:hover {
-    background-color: rgb(67, 95, 95);
+    background-color: rgb(21, 30, 160);
 }
 
 #submit {
     margin: 5px;
     cursor: pointer;
-    background-color: rgb(116, 156, 156);
+    background-color: rgb(63, 95, 184);
     color: white;
     border-radius: 8px;
 }
 
 #submit:hover {
-    background-color: rgb(67, 95, 95);
+    background-color: rgb(21, 30, 160);
 }
-gifSpan {
-    float: right;
+.gifDiv {
+    float: left;
+    border: 3px solid rgb(63, 95, 184);
+    margin: 2px;
 }
 
 #gifSearch {
     font-weight: bolder;
+    border: 3px solid rgb(63, 95, 184);
+    padding: 5px;
 }

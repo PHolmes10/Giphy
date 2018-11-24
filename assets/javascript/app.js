@@ -56,7 +56,7 @@ $(document).on('click', 'button', function () {
         // Loop through the list of 10 random gifs
         for (var i = 0; i < results.length; i++) {
             // Create a new div for each gif
-            var gifSpan = $("<span>");
+            var gifDiv = $("<span class='gifDiv'>");
             // Capture the rating of each gif
             var rating = response.data[i].rating;
             // Creating a p tag to display the rating 
@@ -72,10 +72,10 @@ $(document).on('click', 'button', function () {
             // Adding a custom attribute called data-animate and setting the value to the link of the moving gif image
             images.attr("data-animate", response.data[i].images.fixed_height.url);
             // Appending the P and Image tags to the div
-            gifSpan.prepend(p);
-            gifSpan.prepend(images);
+            gifDiv.prepend(p);
+            gifDiv.prepend(images);
             // Appending the gif div to a div on the DOM 
-            $("#gifList").prepend(gifSpan);
+            $("#gifList").prepend(gifDiv);
         };
 
     });
